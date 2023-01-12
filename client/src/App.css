@@ -1,0 +1,304 @@
+*{
+  /*border: 2px solid red;*/
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header{
+  font-size: 2vw;
+}
+
+.App {
+  text-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.audio-container{
+  margin: auto;
+  width: 50%;
+  height: 80vh;
+  padding: 10px;
+  text-align: center;
+  flex-direction: row;
+}
+
+.audio-controls{
+  flex-direction: row;
+  margin: auto;
+  width: inherit;
+}
+
+.clickable{
+  bottom: 30px;
+  position: fixed;
+}
+
+.sliders{
+  padding: 10px;
+  width: 100%;
+}
+
+.audio-display-container{
+  margin: auto;
+  margin-right: 100px;
+  margin-top: 30px;
+  width: inherit;
+  height: auto;
+  padding: 10%;
+  align-self: center;
+}
+
+.spinning-cd{
+  margin-left: 35%;
+  margin-top: 2%;
+  width: 20vw;
+  height: 20vw;
+  transform: rotate(360deg);
+  animation: spinCD 5s infinite;
+  border-radius: 100%;
+  background: linear-gradient(90deg, rgba(76,75,78,1) 0%, rgba(0,0,0,1) 50%, rgba(76,75,78,1) 100%);  z-index: 1;
+}
+.cd-cover{
+  margin: auto;
+  position: absolute;
+  width: 20vw;
+  height: 21vw;
+  border: none;
+  z-index: 2;
+  box-shadow: 10px 10px 15px;
+}
+
+.audio-slider{
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 5px;
+  width: 50%;
+  border: none;
+  height: 10px;
+  background-color: rgb(189, 189, 189);
+}
+
+.timer-label{
+  margin: 10px;
+}
+
+.audio-slider:hover{
+  background-color: rgb(174, 174, 174);
+}
+
+.audio-slider::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: rgb(168, 39, 39);
+  border-radius: 100%;
+}
+
+.menu-control{
+  left: 10px;
+  top: 10px;
+  z-index: 4;
+  position: fixed;
+}
+
+.menu-content{
+  position: relative;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+  color: rgb(168, 39, 39);
+  display: block;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 100%;
+  animation: openContent 0s linear;
+}
+
+.menu-content-hidden{
+  font-size: large;
+  display: none;
+}
+
+.menu-content:hover{
+  background-color: rgb(168, 39, 39);
+  color: white;
+}
+
+.menu-nav{
+  margin: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 25rem;
+  height: 100%;
+  z-index: 3;
+  position: fixed;
+  background-color: rgb(255, 255, 255);
+  opacity: 1;
+  box-shadow: 10px 0px 20px rgb(103, 103, 103);
+  animation: animateMenu 0.3s linear;
+  padding-top: 5%;
+}
+
+.menu-nav-hide{
+  margin: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0rem;
+  height: 100%;
+  z-index: 3;
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  opacity: 0.7;
+  box-shadow: 10px 0px 20px rgb(103, 103, 103);
+  animation: closeMenu 0.3s linear;
+  padding-top: 5%;
+}
+
+@keyframes animateMenu{
+  from{width: 0rem;}
+  to{width: 25rem;}
+}
+
+@keyframes closeMenu{
+  from{width: 25rem;}
+  to{width: 0rem;}
+}
+
+@keyframes spinCD{
+  from{transform: rotate(0deg);}
+  to{transform: rotate(360deg);}
+}
+
+.material-symbols-outlined {
+  cursor: pointer;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.audio-button{
+  font-size: 5vw;
+}
+
+.nav-button{
+  font-size: 3vw;
+}
+
+/* PHONES AND TABLETS */
+
+@media only screen and (max-width:821px){
+  .spinning-cd{
+    width: 35vh;
+    height: 35vh;
+  }
+  .cd-cover{
+    width: 35vh;
+    height: 36vh;
+  }
+
+  .audio-container{
+    margin: auto;
+    width: 90%;
+    height: 80vh;
+    padding-left: 45px;
+    text-align: center;
+    flex-direction: row;
+    position: fixed;
+  }
+
+  .audio-container .sliders{
+    width: 100vw;
+    margin-left: -50px;
+  }
+
+  .audio-display-container{
+    margin: auto;
+    margin-right: 100px;
+    margin-top: 100px;
+    width: inherit;
+    height: auto;
+    padding: 10%;
+    align-self: center;
+  }
+
+  .audio-controls{
+    flex-direction: row;
+    margin: auto;
+    font-size: 4vw;
+  }
+  
+  .sliders{
+    margin: 10px;
+    width: 200vw;
+    padding-right: 150px;
+  }
+
+  .audio-button{
+    font-size: 10vw;
+  }
+
+  .header{
+    font-size: 5vw;
+  }
+  
+}
+
+@media only screen and (max-width:450px){
+  .spinning-cd{
+    width: 25vh;
+    height: 25vh;
+    margin-left: 95px;
+  }
+  .cd-cover{
+    width: 25vh;
+    height: 26vh;
+    margin-left: 25px;
+  }
+
+  .audio-container{
+    left: 0;
+    width: 100%;
+    height: 80vh;
+    text-align: center;
+    flex-direction: row;
+    position: fixed;
+  }
+
+  .audio-container .sliders{
+    width: 100vw;
+    margin-left: -10px;
+  }
+
+  .audio-display-container{
+    margin: auto;
+    width: inherit;
+    height: auto;
+    align-self: center;
+    margin-left: -50px;
+  }
+
+  .audio-controls{
+    flex-direction: row;
+    margin: auto;
+    font-size: 4vw;
+    margin-left: -45px;
+  }
+  
+  .sliders{
+    margin: 10px;
+    width: 200vw;
+  }
+
+  .audio-button{
+    font-size: 10vw;
+  }
+}
